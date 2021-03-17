@@ -6,7 +6,4 @@ A place to store Go examples learned from pariticipating in the [Coursea - Getti
 Go helpers
 ----------
 
-Can be used to apply syntax fixing to Go files:
-```
-go fmt file.go
-```
+- `go fmt file.go` Can be used to apply syntax correction to Go files for tidy up
