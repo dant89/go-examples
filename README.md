@@ -9,6 +9,14 @@ Go tips
 - Go is a compiled language 
 - Garbage collection is enabled in the background :put_litter_in_its_place:
 
+Comments:
+```
+// Single line comment
+
+/* Block comment 1
+   Block comment 2 */
+```
+
 Variable assignment:
 ```
 // camelCase for variables
