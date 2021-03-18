@@ -6,6 +6,9 @@ A place to store Go examples learned from pariticipating in the [Coursea - Getti
 Go tips
 -------
 
+- Go is a compiled language 
+- Garbage collection is enabled in the background :put_litter_in_its_place:
+
 Variable assignment:
 ```
 // camelCase for variables
