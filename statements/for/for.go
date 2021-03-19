@@ -14,9 +14,29 @@ func main()  {
 	}
 
 	var m int = 5
-	for m < 10 {
+	for m > 1 {
 		fmt.Printf("For m equals: %d\n", m)
 		m--
+	}
+
+	var n int = 1
+	for n < 10 {
+		if (n > 5) {
+			// if the count goes over 5, break and exit the for loop
+			break;
+		}
+		fmt.Printf("For n equals: %d\n", n)
+		n++
+	}
+
+	var o int = 1
+	for o < 10 {
+		o++
+		if (o == 5) {
+			// if the count equals 5, skip this for loop iteration
+			continue
+		}
+		fmt.Printf("For o equals: %d\n", o)
 	}	
 
 	// This is possible but has to be used carefully and in the right scenario
