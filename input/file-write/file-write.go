@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"io/ioutil"
+	"os"
 )
 
 func main() {
@@ -10,6 +11,15 @@ func main() {
 
 	err := ioutil.WriteFile("test-output.txt", data, 777)
 	if err != nil {
-		fmt.Printf("A write error occurred!")
+		fmt.Printf("A write file error occurred!")
+	}
+
+	f, err := os.Create("test-output2.txt")
+	if err != nil {
+		fmt.Printf("A create file error occurred!")
+	}
+	_, error := f.WriteString("Hello world write!")
+	if error != nil {
+		fmt.Printf("A write file error occurred!")
 	}
 }
