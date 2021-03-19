@@ -15,4 +15,11 @@ func main()  {
 	for key, value := range m {
 		fmt.Println(key, "lives at", value)
 	}
+
+	id, p := m["terry"]
+	if p {
+		fmt.Printf("We have Terry in the address book, he lives at %s!\n", id)
+	} else {
+		fmt.Println("We do not have Terry in the address book :(")
+	}
 }
