@@ -16,6 +16,9 @@ func main()  {
 	x, y = getExampleTwo(x, y)
 	getOutput(x, "x")
 	getOutput(y, "y")
+
+	callByReferenceExample(&x)
+	getOutput(x, "x")
 }
 
 func getExampleOne(x int) int {
@@ -28,4 +31,8 @@ func getExampleTwo(x , y int) (int, int) {
 
 func getOutput(x int, name string) {
 	fmt.Printf("%s equals %d\n", name, x)
+}
+
+func callByReferenceExample(y *int) {
+	*y = *y + 2
 }
