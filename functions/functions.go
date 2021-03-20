@@ -19,6 +19,18 @@ func main()  {
 
 	callByReferenceExample(&x)
 	getOutput(x, "x")
+
+	z := []int{1, 2, 3}
+	for i, l := range z {
+		a := "z-1-" + fmt.Sprint(i)
+		getOutput(l, a)	
+	}
+	callByReferenceSliceExample(z)
+
+	for i, l := range z {
+		a := "z-2-" + fmt.Sprint(i)
+		getOutput(l, a)	
+	}
 }
 
 func getExampleOne(x int) int {
@@ -35,4 +47,10 @@ func getOutput(x int, name string) {
 
 func callByReferenceExample(y *int) {
 	*y = *y + 2
+}
+
+// In Go it's recommended to pass by slice as the pointser are included
+// if you pass an array it's a lot more tricky to update with pointers
+func callByReferenceSliceExample(sli []int) {
+	sli[0] = sli[0] + 1
 }
