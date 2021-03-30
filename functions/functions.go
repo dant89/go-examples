@@ -4,6 +4,10 @@ import "fmt"
 
 func main()  {
 	
+	// Deferred function calls, run at the end of the surrounding function
+	// Arguments to these functions are evaluated immediately
+	defer fmt.Println("These function examples were great, goodbye!")
+
 	var x int = 1
 	var y int = 1
 
@@ -31,6 +35,25 @@ func main()  {
 		a := "z-2-" + fmt.Sprint(i)
 		getOutput(l, a)	
 	}
+
+	funcVar = incFn
+	fmt.Println("Variable as a function example output:", funcVar(1))
+
+	var sampleOutput int
+	sampleOutput = applyInt(funcVar, 1)
+	fmt.Println("Function as a parameter example output:", sampleOutput)
+
+	var sampleOutputTwo int
+	sampleOutputTwo = applyInt(func (x int) int {
+		return x + 3
+	}, 1)
+	fmt.Println("Annonymous function as a parameter example output:", sampleOutputTwo)
+	
+	maxValue := getMax(2, 4, 99, 2, 4, 2, 423)
+	fmt.Println("The max value from multiple argument input is:", maxValue)
+
+	maxValueSlice := []int{33, 63, 1, 2, 2323, 33}
+	fmt.Println("The max value from slice argument input is:", getMax(maxValueSlice...))
 }
 
 func getExampleOne(x int) int {
@@ -54,3 +77,28 @@ func callByReferenceExample(y *int) {
 func callByReferenceSliceExample(sli []int) {
 	sli[0] = sli[0] + 1
 }
+
+// Example of setting a variable as a function
+var funcVar func(int) int
+
+func incFn(x int) int {
+	return x + 1
+}
+
+// Example function passing func as a parameter
+func applyInt(afunct func (int) int, val int) int {
+	val = val + 1
+	return afunct(val)
+}
+
+// Variale Argument Number
+func getMax(vals ...int) int {
+	maxValue := -1
+	for _, v := range vals {
+		if v > maxValue {
+			maxValue = v
+		}
+	}
+	return  maxValue
+}
+

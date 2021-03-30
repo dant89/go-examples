@@ -25,7 +25,7 @@ func main()  {
 
 	var car2 Car
 	err2 := json.Unmarshal(barr, &car2)
-	if err2 != nil {
+	if err != nil {
 		fmt.Println("An error was encountered whilst trying to decode JSON.")
 	}
 	fmt.Println(car2)
