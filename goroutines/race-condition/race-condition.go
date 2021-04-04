@@ -5,6 +5,8 @@ import (
 	"time"
 )
 
+var i int
+
 func main() {
 	go subOne()
 	go subTwo()
@@ -31,9 +33,11 @@ func main() {
 }
 
 func subOne() {
-	fmt.Println("This is goroutine 1")
+	i++
+	fmt.Println("This is goroutine 1, sample int value:", i)
 }
 
 func subTwo() {
-	fmt.Println("This is goroutine 2")
+	i--
+	fmt.Println("This is goroutine 2, sample int value:", i)
 }
