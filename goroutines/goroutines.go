@@ -20,6 +20,10 @@ func main() {
 	thread or goroutine first.
 
 	Timing is nondeterministic.
+
+	Debugging errors that only happen randomly, say 1/10
+	due to timings issue is very challenging so we want to
+	avoid that at all costs.
 	
 	Other examples will show better soloutions to this issue.
 	*/
